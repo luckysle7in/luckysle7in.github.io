@@ -106,7 +106,7 @@ rating-stars {
     mask-image: url('../images/ic/star_on.svg');
 }
 .rating-stars-title {
-	font-family: Roboto-Medium;
+	font-weight: 700;
 	font-size: 14px;
 	color: #47C4C6;
 	text-align: center;
@@ -313,7 +313,7 @@ rating-stars {
 .button {
 	display: block;
 	border-radius: 4px;
-	font-family: Roboto-Medium;
+	font-weight: 700;
 	font-size: 18px;
 	text-align: center;
 	line-height: 18px;
