@@ -197,8 +197,8 @@ rating-stars {
 	height: 92px;
 }
 .quick-answer-slider-item:active .check-circle {
-	width: 92px;
-	height: 92px;
+	width: 98px;
+	height: 98px;
 }
 .quick-answer-slider-item:hover img {
 	width: 112px;
@@ -209,8 +209,8 @@ rating-stars {
 	height: 112px;
 }
 .quick-answer-slider-item:active img {
-	width: 122px;
-	height: 122px;
+	width: 118px;
+	height: 118px;
 }
 
 .quick-answer-slider-item .check-wrap {
