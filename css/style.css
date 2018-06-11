@@ -24,6 +24,10 @@ header {
     z-index: 100;
 }
 
+header .logo {
+	margin: 4px 0 0;
+}
+
 input[type=text] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -193,20 +197,20 @@ rating-stars {
 	height: 92px;
 }
 .quick-answer-slider-item:active .check-circle {
-	width: 98px;
-	height: 98px;
+	width: 92px;
+	height: 92px;
 }
 .quick-answer-slider-item:hover img {
-	width: 122px;
-	height: 122px;	
+	width: 112px;
+	height: 112px;	
 }
 .quick-answer-slider-item.checked img {
 	width: 112px;
 	height: 112px;
 }
 .quick-answer-slider-item:active img {
-	width: 128px;
-	height: 128px;
+	width: 122px;
+	height: 122px;
 }
 
 .quick-answer-slider-item .check-wrap {
