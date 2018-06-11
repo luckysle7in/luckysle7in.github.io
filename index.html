@@ -38,6 +38,7 @@
 	</div>
 </div>
 
+
 <div class="content">
 	
 	<div class="quick-answer">
@@ -200,20 +201,34 @@
 	$('#review_textarea').keyup(function(){
 		var text = '';
 		var icon = '';
+		var color = '';
+		var progressBar = document.querySelector('.progress-bar');
+
 		
 		if ($(this).val().length == 0) {
 			icon = '<div class="ic_error"></div>';
 			text = "Recommended minimum 100 characters";
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
 		} else if ($(this).val().length < 100) {
+			icon = '<div class="progress-bar"><svg viewPort="0 0 100 100"><circle class="progress-bar-element shadow"></circle><circle class="progress-bar-element progress"></circle></svg></div>';
 			text = $(this).val().length + ' / 100 minimun';
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+			progressBar = document.querySelector('.progress-bar');
+			progressBar.style.setProperty('--percent', $(this).val().length);
 		} else {
 			icon = '<div class="ic_check_circle"></div>';
 			text = "Good review! Enough...";
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
 		}
 		
-		$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
-		$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
 	})
+	
+	
+
+
 
 
 	function hasTouch() {
