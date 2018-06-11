@@ -24,6 +24,12 @@ header {
     z-index: 100;
 }
 
+input[type=text] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .ic_error {
 	width: 24px;
 	height: 24px;
