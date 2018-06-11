@@ -47,7 +47,7 @@
 				<div class="quick-answer-slider-item bg">
 					<div class="image bg">
 						<div class="check-circle"></div>
-						<img src="images/illustration/reviews.png" />
+						<img src="images/illustration/001.png" />
 						<div class="check-wrap">
 							<div class="check"></div>
 						</div>
@@ -59,7 +59,7 @@
 				<div class="quick-answer-slider-item bg">
 					<div class="image bg">
 						<div class="check-circle"></div>
-						<img src="images/illustration/scan.png" />
+						<img src="images/illustration/002.png" />
 						<div class="check-wrap">
 							<div class="check"></div>
 						</div>
@@ -71,7 +71,7 @@
 				<div class="quick-answer-slider-item bg">
 					<div class="image bg">
 						<div class="check-circle"></div>
-						<img src="images/illustration/showticket.png" />
+						<img src="images/illustration/003.png" />
 						<div class="check-wrap">
 							<div class="check"></div>
 						</div>
@@ -83,7 +83,7 @@
 				<div class="quick-answer-slider-item bg">
 					<div class="image bg">
 						<div class="check-circle"></div>
-						<img src="images/illustration/skiptheline.png" />
+						<img src="images/illustration/004.png" />
 						<div class="check-wrap">
 							<div class="check"></div>
 						</div>
@@ -95,7 +95,7 @@
 				<div class="quick-answer-slider-item bg">
 					<div class="image bg">
 						<div class="check-circle"></div>
-						<img src="images/illustration/reviews.png" />
+						<img src="images/illustration/005.png" />
 						<div class="check-wrap">
 							<div class="check"></div>
 						</div>
@@ -107,7 +107,7 @@
 				<div class="quick-answer-slider-item bg">
 					<div class="image bg">
 						<div class="check-circle"></div>
-						<img src="images/illustration/scan.png" />
+						<img src="images/illustration/006.png" />
 						<div class="check-wrap">
 							<div class="check"></div>
 						</div>
@@ -119,25 +119,13 @@
 				<div class="quick-answer-slider-item bg">
 					<div class="image bg">
 						<div class="check-circle"></div>
-						<img src="images/illustration/showticket.png" />
+						<img src="images/illustration/007.png" />
 						<div class="check-wrap">
 							<div class="check"></div>
 						</div>
 					</div>
 					<div class="title">
 						Good navigation
-					</div>			
-				</div>
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/skiptheline.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
-					</div>
-					<div class="title">
-						Excellent service
 					</div>			
 				</div>
 			</div>
@@ -147,9 +135,21 @@
 		
 	<div class="review">
 		<h2 class="bg">Write a puplic review <span class="optional">(optional)</span></h2>
-		<textarea name="text"></textarea>
+		<textarea name="text" id="review_textarea"></textarea>
 		<div class="textarea-progress">
-			Recommended minimum 100 characters
+			<!--
+				<svg width="20px" height="20px" viewBox="0 0 20 20" class="donut">
+						<circle class="donut-hole" cx="10" cy="10" r="6" fill="#fff"></circle>
+						<circle class="donut-ring" cx="10" cy="10" r="8" fill="transparent" stroke="#d2d3d4" stroke-width="4"></circle>
+						<circle class="donut-segment" cx="10" cy="10" r="8" fill="transparent" stroke="#ce4b99" stroke-width="4" stroke-dasharray="30" stroke-linecap="round"></circle>
+				</svg>
+			-->
+			<div class="textarea-progress-indicator">
+				<div class="ic_error"></div>
+			</div>
+			<div class="textarea-progress-message">
+				Recommended minimum 100 characters
+			</div>
 		</div>
 	</div>
 	
@@ -180,6 +180,25 @@
 		   $('.rating-star').eq(i).addClass('star-on');
 		}
 	})	
+
+	$('#review_textarea').keyup(function(){
+		var text = '';
+		var icon = '';
+		
+		if ($(this).val().length == 0) {
+			icon = '<div class="ic_error"></div>';
+			text = "Recommended minimum 100 characters";
+		} else if ($(this).val().length < 100) {
+			text = $(this).val().length + ' / 100 minimun';
+		} else {
+			icon = '<div class="ic_check_circle"></div>';
+			text = "Good review! Enough...";
+		}
+
+		$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
+		$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+	})
+
 
 </script>
 

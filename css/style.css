@@ -24,6 +24,20 @@ header {
     z-index: 100;
 }
 
+
+.ic_error {
+	width: 24px;
+	height: 24px;
+    -webkit-mask-image: url('../images/ic/error.svg');
+    mask-image: url('../images/ic/error.svg');
+}
+.ic_check_circle{
+	width: 24px;
+	height: 24px;
+    -webkit-mask-image: url('../images/ic/check_circle.svg');
+    mask-image: url('../images/ic/check_circle.svg');
+}
+
 .bg {
 	background: rgba(241,103,108,0.0);
 }
@@ -81,7 +95,7 @@ rating-stars {
 	cursor: pointer;
     background-color: #47C4C6;
     -webkit-mask-image: url('../images/ic/star_off.svg');
-    mask-image: url('../images/ic/star_on.star_off');
+    mask-image: url('../images/ic/star_on.svg');
 }
 .rating-star.star-on {
     background-color: #47C4C6;
@@ -246,7 +260,7 @@ rating-stars {
 }
 .review .textarea-progress {
     box-sizing: border-box;
-	padding: 16px;
+	padding: 12px 16px;
 	margin: 0;
 	font-size: 14px;
 	line-height: 16px;
@@ -254,6 +268,27 @@ rating-stars {
 	border-width: 0 1px 1px;
 	border-radius: 0 0 4px 4px;
 	background: #F5F6F8;
+	position: relative;
+}
+.review .textarea-progress-indicator {
+	position: absolute;
+	top: 12px;
+	left: 16px;
+	width: 24px;
+	height: 24px;
+	display: block;
+	float: left;
+}
+.review .textarea-progress-indicator .ic_error {
+	background: #989DA8;
+}
+.review .textarea-progress-indicator .ic_check_circle {
+	background: #018794;
+}
+
+.review .textarea-progress-message {
+	display: block;
+	padding: 4px 0 4px 32px;
 }
 
 
