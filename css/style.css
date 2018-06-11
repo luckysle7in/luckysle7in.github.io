@@ -1,6 +1,3 @@
-* {
-	font-family: 'Roboto', sans-serif;
-}
 html {
   min-width: 320px;
   background: #fff;
@@ -26,7 +23,6 @@ header {
     position: relative;
     z-index: 100;
 }
-
 
 .ic_error {
 	width: 24px;
@@ -96,25 +92,31 @@ rating-stars {
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
-    background-color: #47C4C6;
+    background-color: #018794;
     -webkit-mask-image: url('../images/ic/star_off.svg');
-    mask-image: url('../images/ic/star_on.svg');
+    mask-image: url('../images/ic/star_on.star_off');
+    transition: all 0.2s;
 }
 .rating-star.star-on {
-    background-color: #47C4C6;
     -webkit-mask-image: url('../images/ic/star_on.svg');
     mask-image: url('../images/ic/star_on.svg');
 }
+.rating-star.hover {
+    background-color: #47C4C6;
+}
 .rating-stars-title {
-	font-weight: 700;
+	font-weight: 500;
 	font-size: 14px;
-	color: #47C4C6;
+	color: #018794;
 	text-align: center;
 	line-height: 16px;
 	margin: 8px 0 0;
 	padding: 5px 0 3px;
+    transition: all 0.2s;
 }
-
+.rating-stars-title.hover {
+	color: #47C4C6;
+}
 
 .content {
 	margin: 0;
@@ -128,7 +130,8 @@ rating-stars {
 }
 .quick-answer-slider {
 	height: 144px;
-	margin-right: -16px;
+	margin: 0 -16px;
+	padding: 0 16px;
 	overflow-x: scroll;
 }
 .quick-answer-slider-inner {
@@ -144,7 +147,7 @@ rating-stars {
 	cursor: pointer;
 }
 .quick-answer-slider-item:last-child {
-	margin-right: 16px;
+	padding-right: 16px;
 }
 .quick-answer-slider-item .image {
 	width: 80px;
@@ -199,11 +202,11 @@ rating-stars {
 
 .quick-answer-slider-item .check-wrap {
 	position: absolute;
-	top: 65px;
-	left: 55px;
+	top: 60px;
+	left: 59px;
 	width: 32px;
 	height: 32px;
-	background-color: #fff;
+	background-color: #018794;
     z-index: 2;
     border-radius: 50%;
     opacity: 0;
@@ -211,14 +214,13 @@ rating-stars {
 }
 .quick-answer-slider-item.checked .check-wrap {
 	top: 55px;
-	left: 55px;
 	opacity: 1;
 }
 
 .quick-answer-slider-item.checked .check {
 	width: 32px;
 	height: 32px;
-	background-color: #018794;
+	background-color: #fff;
     -webkit-mask-image: url('../images/ic/check.svg');
     mask-image: url('../images/ic/check.svg');
 }
@@ -261,6 +263,11 @@ rating-stars {
     resize: none;
 	font-size: 16px;
 	box-shadow: inset 0 0 0 0 #fff;
+}
+.review textarea:focus {
+	outline: none;
+	border: 2px solid #47C4C6;
+	padding: 15px;
 }
 .review .textarea-progress {
     box-sizing: border-box;
@@ -314,7 +321,7 @@ rating-stars {
 .button {
 	display: block;
 	border-radius: 4px;
-	font-weight: 700;
+	font-weight: 500;
 	font-size: 18px;
 	text-align: center;
 	line-height: 18px;

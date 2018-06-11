@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-    <title>Combined Shape</title>
+    <title>ic/check</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="review_experience_step_1_mobile-copy-67" transform="translate(-176.000000, -352.000000)" fill="#018794" fill-rule="nonzero">
-            <g id="Group-10-Copy" transform="translate(0.000000, 248.000000)">
-                <g id="Group-6" transform="translate(8.000000, 33.000000)">
-                    <g id="Group-2-Copy" transform="translate(104.000000, 15.000000)">
-                        <g id="Group-8" transform="translate(64.000000, 56.000000)">
-                            <path d="M16,0 C24.832,0 32,7.168 32,16 C32,24.832 24.832,32 16,32 C7.168,32 0,24.832 0,16 C0,7.168 7.168,0 16,0 Z M12.8,24 L27.2,9.6 L24.944,7.328 L12.8,19.472 L7.056,13.744 L4.8,16 L12.8,24 Z" id="Combined-Shape"></path>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
+    <g id="ic/check" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-9" x="0" y="0" width="32" height="32"></rect>
+        <polygon id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero" points="12.8 24 4.8 16 7.056 13.744 12.8 19.472 24.944 7.328 27.2 9.6"></polygon>
     </g>
 </svg>

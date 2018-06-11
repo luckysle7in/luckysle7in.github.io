@@ -25,15 +25,15 @@
 		Allen, we are glad <br /> that you like your experience!
 	</h1>
 	<div class="rating-stars">
-		<div class="rating-stars-wrap bg">
-			<div class="rating-star star-1" data-title="Terrible"></div>
-			<div class="rating-star star-2" data-title="Poor"></div>
-			<div class="rating-star star-3" data-title="Average"></div>
-			<div class="rating-star star-4" data-title="Good"></div>
+		<div class="rating-stars-wrap bg" data-title="Good" data-checked="3">
+			<div class="rating-star star-1 star-on" data-title="Terrible"></div>
+			<div class="rating-star star-2 star-on" data-title="Poor"></div>
+			<div class="rating-star star-3 star-on" data-title="Average"></div>
+			<div class="rating-star star-4 star-on" data-title="Good"></div>
 			<div class="rating-star star-5" data-title="Excellent"></div>
 		</div>
 		<div class="rating-stars-title bg">
-			Excellent
+			Good
 		</div>
 	</div>
 </div>
@@ -137,13 +137,6 @@
 		<h2 class="bg">Write a puplic review <span class="optional">(optional)</span></h2>
 		<textarea name="text" id="review_textarea"></textarea>
 		<div class="textarea-progress">
-			<!--
-				<svg width="20px" height="20px" viewBox="0 0 20 20" class="donut">
-						<circle class="donut-hole" cx="10" cy="10" r="6" fill="#fff"></circle>
-						<circle class="donut-ring" cx="10" cy="10" r="8" fill="transparent" stroke="#d2d3d4" stroke-width="4"></circle>
-						<circle class="donut-segment" cx="10" cy="10" r="8" fill="transparent" stroke="#ce4b99" stroke-width="4" stroke-dasharray="30" stroke-linecap="round"></circle>
-				</svg>
-			-->
 			<div class="textarea-progress-indicator">
 				<div class="ic_error"></div>
 			</div>
@@ -174,13 +167,36 @@
 	})
 		
 	$('.rating-star').on('click', function() {
-		$('.rating-star').removeClass('star-on');
+		$('.rating-star').removeClass('star-on').removeClass('hover');
+		$('.rating-stars-title').removeClass('hover');
 		$('.rating-stars-title').text($(this).attr('data-title'));
+		$(this).parent().attr('data-title', $(this).attr('data-title'));
+		$(this).parent().attr('data-checked', $(this).index());
 		for (var i = 0; i <= $(this).index(); i++) {
 		   $('.rating-star').eq(i).addClass('star-on');
 		}
 	})	
 
+	$('.rating-star').mouseover(function() {
+		$('.rating-star').removeClass('star-on').addClass('hover');
+		$('.rating-stars-title').addClass('hover');
+		$('.rating-stars-title').text($(this).attr('data-title'));
+		for (var i = 0; i <= $(this).index(); i++) {
+		   $('.rating-star').eq(i).addClass('star-on');
+		}
+	})	
+	
+	$('.rating-star').mouseout(function() {
+		$('.rating-star').removeClass('star-on').removeClass('hover');
+		$('.rating-stars-title').removeClass('hover');
+		$('.rating-stars-title').text($(this).parent().attr('data-title'));
+		for (var i = 0; i <= $(this).parent().attr('data-checked'); i++) {
+		   $('.rating-star').eq(i).addClass('star-on');
+		}
+	})	
+	
+	
+	
 	$('#review_textarea').keyup(function(){
 		var text = '';
 		var icon = '';
@@ -194,7 +210,7 @@
 			icon = '<div class="ic_check_circle"></div>';
 			text = "Good review! Enough...";
 		}
-
+		
 		$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
 		$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
 	})
