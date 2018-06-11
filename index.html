@@ -2,10 +2,188 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=1036"> -->
+	<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes"> -->
 	<meta name="viewport" content="width=device-width">
-	<title>Luckysle7in</title>
+	<title>Review</title>
+	<link rel="stylesheet" href="css/jquery.steps.css">
+	<link rel="stylesheet" href="css/swiper.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+	<script src="javascript/jquery-3.1.0.min.js"></script>
+
 </head>
 <body>
-Test
+
+<header>
+	<img id="logo" src="images/logo.svg" alt="Tiqets">
+</header>
+
+<div class="intro">
+	<h1 class="bg">
+		Allen, we are glad <br /> that you like your experience!
+	</h1>
+	<div class="rating-stars">
+		<div class="rating-stars-wrap bg">
+			<div class="rating-star star-1" data-title="Terrible"></div>
+			<div class="rating-star star-2" data-title="Poor"></div>
+			<div class="rating-star star-3" data-title="Average"></div>
+			<div class="rating-star star-4" data-title="Good"></div>
+			<div class="rating-star star-5" data-title="Excellent"></div>
+		</div>
+		<div class="rating-stars-title bg">
+			Excellent
+		</div>
+	</div>
+</div>
+
+<div class="content">
+	
+	<div class="quick-answer">
+		<h2 class="bg">What you remember most?</h2>
+		<div class="quick-answer-slider">
+			<div class="quick-answer-slider-inner">
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/reviews.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Excellent service
+					</div>			
+				</div>
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/scan.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Great audio guide
+					</div>			
+				</div>
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/showticket.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Good navigation
+					</div>			
+				</div>
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/skiptheline.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Excellent service
+					</div>			
+				</div>
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/reviews.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Excellent service
+					</div>			
+				</div>
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/scan.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Great audio guide
+					</div>			
+				</div>
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/showticket.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Good navigation
+					</div>			
+				</div>
+				<div class="quick-answer-slider-item bg">
+					<div class="image bg">
+						<div class="check-circle"></div>
+						<img src="images/illustration/skiptheline.png" />
+						<div class="check-wrap">
+							<div class="check"></div>
+						</div>
+					</div>
+					<div class="title">
+						Excellent service
+					</div>			
+				</div>
+			</div>
+		</div>
+	</div>
+		
+		
+	<div class="review">
+		<h2 class="bg">Write a puplic review <span class="optional">(optional)</span></h2>
+		<textarea name="text"></textarea>
+		<div class="textarea-progress">
+			Recommended minimum 100 characters
+		</div>
+	</div>
+	
+	
+</div>
+		
+		
+</div>
+
+
+
+
+
+
+<div class="bottom-sticky">
+	<a href="#" class="button button-green">Post review</a>
+</div>
+
+<script>
+	$('.quick-answer-slider-item').on('click', function() {
+		$(this).toggleClass('checked');
+	})
+		
+	$('.rating-star').on('click', function() {
+		$('.rating-star').removeClass('star-on');
+		$('.rating-stars-title').text($(this).attr('data-title'));
+		for (var i = 0; i <= $(this).index(); i++) {
+		   $('.rating-star').eq(i).addClass('star-on');
+		}
+	})	
+
+</script>
+
+
+<script src="javascript/custom.js"></script>
 </body>
 </html>

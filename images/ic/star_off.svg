@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>ic/star_off</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="ic/star_off" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Shape" points="0 0 32 0 32 32 0 32"></polygon>
+        <path d="M22.7277354,25.9192319 L20.9423561,18.266051 L26.8871665,13.1160595 L19.0612658,12.4521097 L16,5.2292655 L12.9387342,12.4521097 L5.11283349,13.1160595 L11.0576439,18.266051 L9.27226458,25.9192319 L16,21.8586408 L22.7277354,25.9192319 Z" id="Shape" stroke="#000000" stroke-width="2" fill-rule="nonzero"></path>
+    </g>
+</svg>
