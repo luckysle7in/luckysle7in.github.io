@@ -276,6 +276,9 @@ rating-stars {
     resize: none;
 	font-size: 16px;
 	box-shadow: none;
+	outline: none;    
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 .review textarea:focus {
 	outline: none;
