@@ -51,40 +51,33 @@
 </div>
 
 
-<div class="content content-question">
-	<h1 class="bg">
+<div class="content">
+	<h1 class="align-center bg">
 		What did you think about the Tiqets booking process?
 	</h1>
-
-	<div class="question-answer">
-		<div class="question-answer-item bg">
-				<div class="icon-wrap bg">
-					<div class="icon_bg"></div>
-					<div class="icon icon-bad red"></div>		
-				</div>
-				<div class="title">Terrible</div>	
+	<div class="question-type-icons">
+		<div class="question-type-icons-item red bg">
+			<div class="icon-wrap bg">
+				<div class="icon_bg"></div>
+				<div class="icon icon-bad"></div>		
 			</div>
-		<div class="question-answer-item bg">
-				<div class="icon-wrap bg">
-					<div class="icon_bg"></div>
-					<div class="icon icon-neutral grey"></div>		
-				</div>
-				<div class="title">Neutral</div>	
+			<div class="title">Terrible</div>	
 		</div>
-		<div class="question-answer-item bg">
-				<div class="icon-wrap bg">
-					<div class="icon_bg"></div>
-					<div class="icon icon-good green"></div>		
-				</div>
-				<div class="title">Good</div>	
+		<div class="question-type-icons-item grey bg">
+			<div class="icon-wrap bg">
+				<div class="icon_bg"></div>
+				<div class="icon icon-neutral"></div>		
+			</div>
+			<div class="title">Neutral</div>	
 		</div>
-
-	</div>
-	
-
-
-	
-	
+		<div class="question-type-icons-item green bg">
+			<div class="icon-wrap bg">
+				<div class="icon_bg"></div>
+				<div class="icon icon-good"></div>		
+			</div>
+			<div class="title">Good</div>	
+		</div>
+	</div>	
 </div>
 
 
@@ -93,7 +86,7 @@
 
 
 <div class="bottom-sticky">
-	<a href="#" class="button button-green">Post review</a>
+	<a href="#" class="button button-grey">Skip<span class="button-icon chevron_right"></span></a>
 </div>
 
 <script>
@@ -130,6 +123,11 @@
 		}
 	})	
 	
+	
+	$('.question-type-icons-item').on('click', function() {
+		$(this).parent().children('.question-type-icons-item').removeClass('active');
+		$(this).addClass('active');
+	})
 	
 	
 	$('#review_textarea').keyup(function(){
