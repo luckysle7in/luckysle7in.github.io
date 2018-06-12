@@ -87,7 +87,8 @@ h2 {
 .intro-question {
 }
 .intro-question-description {
-	padding: -1px 0 3px;
+	padding: 0 0 4px;
+	margin-top: -8px;
 }
 
 .rating-stars {
