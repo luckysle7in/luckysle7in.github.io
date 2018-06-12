@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=1036"> -->
+	<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes"> -->
+	<meta name="viewport" content="width=device-width">
+	<title>Review</title>
+	<link rel="stylesheet" href="css/jquery.steps.css">
+	<link rel="stylesheet" href="css/swiper.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+	<script src="javascript/jquery-3.1.0.min.js"></script>
+
+</head>
+<body>
+
+<header>
+	<img class="logo" src="images/logo.svg" alt="Tiqets">
+</header>
+
+<div class="intro intro-question">
+
+	<div class="icon-image icon-right-top bg">
+		<img src="images/illustration/003.png" />
+	</div>
+
+
+
+	<h1 class="bg">
+		Can you tell us more?
+	</h1>
+	<div class="intro-question-description bg">
+		Your feedback helps other visitors to plan their trips!
+	</div>
+	<div class="question-stepper">
+		<div class="question-stepper-title bg">
+			Step 1 / 5
+		</div>
+		<div class="question-stepper-steps">
+				<div class="step-1 step-on"><div></div></div>
+				<div class="step-2 step-on"><div></div></div>
+				<div class="step-3"><div></div></div>
+				<div class="step-4"><div></div></div>
+				<div class="step-5"><div></div></div>
+		</div>
+	</div>
+
+
+</div>
+
+
+<div class="content content-question">
+	<h1 class="bg">
+		What did you think about the Tiqets booking process?
+	</h1>
+
+	<div class="question-answer">
+		<div class="question-answer-item bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<div class="icon icon-bad red"></div>		
+				</div>
+				<div class="title">Terrible</div>	
+			</div>
+		<div class="question-answer-item bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<div class="icon icon-neutral grey"></div>		
+				</div>
+				<div class="title">Neutral</div>	
+		</div>
+		<div class="question-answer-item bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<div class="icon icon-good green"></div>		
+				</div>
+				<div class="title">Good</div>	
+		</div>
+
+	</div>
+	
+
+
+	
+	
+</div>
+
+
+
+
+
+
+<div class="bottom-sticky">
+	<a href="#" class="button button-green">Post review</a>
+</div>
+
+<script>
+	$('.quick-answer-slider-item').on('click', function() {
+		$(this).toggleClass('checked');
+	})
+		
+	$('.rating-star').on('click', function() {
+		$('.rating-star').removeClass('star-on').removeClass('hover');
+		$('.rating-stars-title').removeClass('hover');
+		$('.rating-stars-title').text($(this).attr('data-title'));
+		$(this).parent().attr('data-title', $(this).attr('data-title'));
+		$(this).parent().attr('data-checked', $(this).index());
+		for (var i = 0; i <= $(this).index(); i++) {
+		   $('.rating-star').eq(i).addClass('star-on');
+		}
+	})	
+
+	$('.rating-star').mouseover(function() {
+		$('.rating-star').removeClass('star-on').addClass('hover');
+		$('.rating-stars-title').addClass('hover');
+		$('.rating-stars-title').text($(this).attr('data-title'));
+		for (var i = 0; i <= $(this).index(); i++) {
+		   $('.rating-star').eq(i).addClass('star-on');
+		}
+	})	
+	
+	$('.rating-star').mouseout(function() {
+		$('.rating-star').removeClass('star-on').removeClass('hover');
+		$('.rating-stars-title').removeClass('hover');
+		$('.rating-stars-title').text($(this).parent().attr('data-title'));
+		for (var i = 0; i <= $(this).parent().attr('data-checked'); i++) {
+		   $('.rating-star').eq(i).addClass('star-on');
+		}
+	})	
+	
+	
+	
+	$('#review_textarea').keyup(function(){
+		var text = '';
+		var icon = '';
+		var color = '';
+		var progressBar = document.querySelector('.progress-bar');
+
+		
+		if ($(this).val().length == 0) {
+			icon = '<div class="ic_error"></div>';
+			text = "Recommended minimum 100 characters";
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+		} else if ($(this).val().length < 100) {
+			icon = '<div class="progress-bar"><svg viewPort="0 0 100 100"><circle class="progress-bar-element shadow"></circle><circle class="progress-bar-element progress"></circle></svg></div>';
+			text = $(this).val().length + ' / 100 minimun';
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+			progressBar = document.querySelector('.progress-bar');
+			progressBar.style.setProperty('--percent', $(this).val().length);
+		} else {
+			icon = '<div class="ic_check_circle"></div>';
+			text = "Good review! Enough...";
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
+			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+		}
+		
+	})
+	
+	
+
+
+
+
+	function hasTouch() {
+	    return 'ontouchstart' in document.documentElement
+	           || navigator.maxTouchPoints > 0
+	           || navigator.msMaxTouchPoints > 0;
+	}
+	
+	if (hasTouch()) { // remove all :hover stylesheets
+	    try { // prevent exception on browsers not supporting DOM styleSheets properly
+	        for (var si in document.styleSheets) {
+	            var styleSheet = document.styleSheets[si];
+	            if (!styleSheet.rules) continue;
+	
+	            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+	                if (!styleSheet.rules[ri].selectorText) continue;
+	
+	                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+	                    styleSheet.deleteRule(ri);
+	                }
+	            }
+	        }
+	    } catch (ex) {}
+	}
+
+</script>
+
+
+<script src="javascript/custom.js"></script>
+</body>
+</html>
