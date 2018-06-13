@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 	<script src="javascript/jquery-3.1.0.min.js"></script>
 
 </head>
@@ -49,9 +51,7 @@
 					<div class="image bg">
 						<div class="check-circle"></div>
 						<img src="images/illustration/001.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
+						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
 					</div>
 					<div class="title">
 						Excellent service
@@ -61,9 +61,7 @@
 					<div class="image bg">
 						<div class="check-circle"></div>
 						<img src="images/illustration/002.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
+						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
 					</div>
 					<div class="title">
 						Great audio guide
@@ -73,9 +71,7 @@
 					<div class="image bg">
 						<div class="check-circle"></div>
 						<img src="images/illustration/003.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
+						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
 					</div>
 					<div class="title">
 						Good navigation
@@ -85,9 +81,7 @@
 					<div class="image bg">
 						<div class="check-circle"></div>
 						<img src="images/illustration/004.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
+						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
 					</div>
 					<div class="title">
 						Excellent service
@@ -97,9 +91,7 @@
 					<div class="image bg">
 						<div class="check-circle"></div>
 						<img src="images/illustration/005.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
+						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
 					</div>
 					<div class="title">
 						Excellent service
@@ -109,9 +101,7 @@
 					<div class="image bg">
 						<div class="check-circle"></div>
 						<img src="images/illustration/006.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
+						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
 					</div>
 					<div class="title">
 						Great audio guide
@@ -121,9 +111,7 @@
 					<div class="image bg">
 						<div class="check-circle"></div>
 						<img src="images/illustration/007.png" />
-						<div class="check-wrap">
-							<div class="check"></div>
-						</div>
+						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
 					</div>
 					<div class="title">
 						Good navigation
@@ -139,7 +127,7 @@
 		<textarea name="text" id="review_textarea"></textarea>
 		<div class="textarea-progress">
 			<div class="textarea-progress-indicator">
-				<div class="ic_error"></div>
+				<i class="material-icons md-24 md-grey">error_outline</i>
 			</div>
 			<div class="textarea-progress-message">
 				Recommended minimum 100 characters
@@ -161,100 +149,6 @@
 <div class="bottom-sticky">
 	<a href="#" class="button button-green">Post review</a>
 </div>
-
-<script>
-	$('.quick-answer-slider-item').on('click', function() {
-		$(this).toggleClass('checked');
-	})
-		
-	$('.rating-star').on('click', function() {
-		$('.rating-star').removeClass('star-on').removeClass('hover');
-		$('.rating-stars-title').removeClass('hover');
-		$('.rating-stars-title').text($(this).attr('data-title'));
-		$(this).parent().attr('data-title', $(this).attr('data-title'));
-		$(this).parent().attr('data-checked', $(this).index());
-		for (var i = 0; i <= $(this).index(); i++) {
-		   $('.rating-star').eq(i).addClass('star-on');
-		}
-	})	
-
-	$('.rating-star').mouseover(function() {
-		$('.rating-star').removeClass('star-on').addClass('hover');
-		$('.rating-stars-title').addClass('hover');
-		$('.rating-stars-title').text($(this).attr('data-title'));
-		for (var i = 0; i <= $(this).index(); i++) {
-		   $('.rating-star').eq(i).addClass('star-on');
-		}
-	})	
-	
-	$('.rating-star').mouseout(function() {
-		$('.rating-star').removeClass('star-on').removeClass('hover');
-		$('.rating-stars-title').removeClass('hover');
-		$('.rating-stars-title').text($(this).parent().attr('data-title'));
-		for (var i = 0; i <= $(this).parent().attr('data-checked'); i++) {
-		   $('.rating-star').eq(i).addClass('star-on');
-		}
-	})	
-	
-	
-	
-	$('#review_textarea').keyup(function(){
-		var text = '';
-		var icon = '';
-		var color = '';
-		var progressBar = document.querySelector('.progress-bar');
-
-		
-		if ($(this).val().length == 0) {
-			icon = '<div class="ic_error"></div>';
-			text = "Recommended minimum 100 characters";
-			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
-			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
-		} else if ($(this).val().length < 100) {
-			icon = '<div class="progress-bar"><svg viewPort="0 0 100 100"><circle class="progress-bar-element shadow"></circle><circle class="progress-bar-element progress"></circle></svg></div>';
-			text = $(this).val().length + ' / 100 minimun';
-			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
-			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
-			progressBar = document.querySelector('.progress-bar');
-			progressBar.style.setProperty('--percent', $(this).val().length);
-		} else {
-			icon = '<div class="ic_check_circle"></div>';
-			text = "Good review! Enough...";
-			$(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
-			$(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
-		}
-		
-	})
-	
-	
-
-
-
-
-	function hasTouch() {
-	    return 'ontouchstart' in document.documentElement
-	           || navigator.maxTouchPoints > 0
-	           || navigator.msMaxTouchPoints > 0;
-	}
-	
-	if (hasTouch()) { // remove all :hover stylesheets
-	    try { // prevent exception on browsers not supporting DOM styleSheets properly
-	        for (var si in document.styleSheets) {
-	            var styleSheet = document.styleSheets[si];
-	            if (!styleSheet.rules) continue;
-	
-	            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-	                if (!styleSheet.rules[ri].selectorText) continue;
-	
-	                if (styleSheet.rules[ri].selectorText.match(':hover')) {
-	                    styleSheet.deleteRule(ri);
-	                }
-	            }
-	        }
-	    } catch (ex) {}
-	}
-
-</script>
 
 
 <script src="javascript/custom.js"></script>

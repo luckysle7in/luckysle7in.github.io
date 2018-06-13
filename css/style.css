@@ -24,6 +24,18 @@ header {
     z-index: 100;
 }
 
+/* Rules for sizing the icon */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Colors */
+.material-icons.md-grey 	{ color: rgba(119, 125, 140, 1.0); }
+.material-icons.md-red 		{ color: rgba(241, 103, 108, 1.0); }
+.material-icons.md-green 	{ color: rgba(71, 196, 198, 1.0); }
+
+
 header .logo {
 	margin: 4px 0 0;
 }
@@ -218,7 +230,7 @@ h2 {
 .quick-answer-slider-item .check-wrap {
 	position: absolute;
 	top: 60px;
-	left: 59px;
+	left: 56px;
 	width: 32px;
 	height: 32px;
 	background-color: #018794;
@@ -232,12 +244,9 @@ h2 {
 	opacity: 1;
 }
 
-.quick-answer-slider-item.checked .check {
-	width: 32px;
-	height: 32px;
-	background-color: #fff;
-    -webkit-mask-image: url('../images/ic/check.svg');
-    mask-image: url('../images/ic/check.svg');
+.quick-answer-slider-item .material-icons {
+	color: #fff;
+	padding: 4px;
 }
 
 .quick-answer-slider-item .title {
@@ -281,8 +290,8 @@ h2 {
 }
 .review textarea:focus {
 	outline: none;
-	border: 2px solid #47C4C6;
-	padding: 15px;
+	border: 1px solid #018794;
+	padding: 16px;
 }
 .review .textarea-progress {
     box-sizing: border-box;
@@ -304,6 +313,7 @@ h2 {
 	height: 24px;
 	display: block;
 	float: left;
+	color: #018794;
 }
 .review .textarea-progress-indicator .ic_error {
 	background: #989DA8;
@@ -413,16 +423,9 @@ h2 {
 	background: #BFC3CC;
 }
 
-.button .button-icon {
-	display: inline-block;
+.button .material-icons {
 	vertical-align: middle;
-	width: 24px;
-	height: 24px;
-	margin: -4px 0;
-}
-.button .button-icon.chevron_right {
-    -webkit-mask-image: url('../images/ic/chevron_right.svg');
-    mask-image: url('../images/ic/chevron_right.svg');
+    transition: all 0.5s;
 }	
 
 
@@ -532,19 +535,15 @@ h2 {
 	width: 88px;
 	height: 88px;
 }
-.question-type-icons-item .icon {
-	width: 48px;
-	height: 48px;
+.question-type-icons-item .material-icons {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
     transition: all 0.2s;
 }
-
-
-.question-type-icons-item.grey .icon {
-	background-color: #777D8C;
+.question-type-icons-item.active .material-icons {
+	color: #fff;
 }
 .question-type-icons-item.grey.active .icon_bg {
 	background: #777D8C;
@@ -552,50 +551,17 @@ h2 {
 	width: 88px;
 	height: 88px;
 }
-.question-type-icons-item.grey.active .icon {
-	background-color: #fff;
-}
-
-
-.question-type-icons-item.red .icon {
-	background-color: #F1676C;
-}
 .question-type-icons-item.red.active .icon_bg {
 	background: #F1676C;
 	border: 1px solid #F1676C;
 	width: 88px;
 	height: 88px;
 }
-.question-type-icons-item.red.active .icon {
-	background-color: #fff;
-}
-
-
-.question-type-icons-item.green .icon {
-	background-color: #47C4C6;
-}
 .question-type-icons-item.green.active .icon_bg {
 	background: #47C4C6;
 	border: 1px solid #47C4C6;
 	width: 88px;
 	height: 88px;
-}
-.question-type-icons-item.green.active .icon {
-	background-color: #fff;
-}
-
-
-.question-type-icons-item .icon.icon-bad {
-    -webkit-mask-image: url('../images/ic/smile_bad.svg');
-    mask-image: url('../images/ic/smile_bad.svg');
-}
-.question-type-icons-item .icon.icon-neutral {
-    -webkit-mask-image: url('../images/ic/smile_neutral.svg');
-    mask-image: url('../images/ic/smile_neutral.svg');
-}
-.question-type-icons-item .icon.icon-good {
-    -webkit-mask-image: url('../images/ic/smile_good.svg');
-    mask-image: url('../images/ic/smile_good.svg');
 }
 .question-type-icons-item .title {
 	margin: 11px 0 0;
@@ -608,3 +574,41 @@ h2 {
 
 
 
+.question-type-options-item {
+	margin: 0 0 8px;
+	padding: 11px 12px 11px 44px;
+	background: #FFFFFF;
+	border: 1px solid #BABEC5;
+	border-radius: 4px;
+	position: relative;
+	font-size: 16px;
+	color: #323C52;
+	line-height: 24px;
+	cursor: pointer;
+	box-sizing: border-box;
+    transition: all 0.2s;
+}
+.question-type-options-item.active {
+	background: #47C4C6;
+	border: 1px solid #47C4C6;
+	color: #fff;
+}
+.question-type-options-item .material-icons {
+	position: absolute;
+	top: 11px;
+	left: 11px;
+    transition: all 0.2s;
+}
+.question-type-options-item .material-icons.blank {
+	color: #BABEC5;
+}
+.question-type-options-item.active .material-icons.blank {
+	opacity: 0;
+}
+.question-type-options-item .material-icons.checked {
+	color: #fff;
+	opacity: 0;
+}
+.question-type-options-item.active .material-icons.checked {
+	opacity: 1;
+}
