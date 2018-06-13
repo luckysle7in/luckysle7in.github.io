@@ -535,12 +535,20 @@ h2 {
 	width: 88px;
 	height: 88px;
 }
+.question-type-icons-item:active .icon_bg {
+	width: 96px;
+	height: 96px;
+}
 .question-type-icons-item .material-icons {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
     transition: all 0.2s;
+}
+.question-type-icons-item:hover .material-icons,
+.question-type-icons-item.active .material-icons {
+	font-size: 56px;
 }
 .question-type-icons-item.active .material-icons {
 	color: #fff;
