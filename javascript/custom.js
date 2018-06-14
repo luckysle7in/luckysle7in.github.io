@@ -97,6 +97,7 @@ $('.bottom-sticky a').on('click', function() {
 	} else {
 	    $('.question_step.active').next().addClass('active');		
 	}
+	$('.question-stepper-title').children('span').text($('.content_step.active').attr('data-step') - 1);
 })
 
 

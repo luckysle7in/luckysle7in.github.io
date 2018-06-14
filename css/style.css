@@ -152,9 +152,10 @@ h2 {
 }
 
 
-
+.quick-answer {
+}
 .quick-answer-slider {
-	margin: 0 -16px;
+	margin: 0 0;
 	padding: 0 16px;
 	overflow-x: scroll;
 }
@@ -264,7 +265,7 @@ h2 {
 
 .review {
 	margin: 16px 0 0;
-	padding: 0;
+	padding: 0 16px;
 }
 .review h2 span.optional {
 	font-weight: normal;
@@ -394,7 +395,7 @@ h2 {
 	font-size: 18px;
 	text-align: center;
 	line-height: 18px;
-	padding: 15px 32px;
+	padding: 12px 32px;
 	margin: 0;
 	text-decoration: none;
     transition: all 0.5s;
@@ -715,7 +716,7 @@ h2 {
 .content_step {
 	_display: none;
 	height: 0;
-	overflow: hidden;
+	overflow-y: hidden;
     transition: all 0.2s;
 }
 .intro_step.active,
@@ -724,7 +725,9 @@ h2 {
 	_display: block;
 }
 
-
+#content_1 {
+	margin: 0 -16px;
+}
 
 
 
