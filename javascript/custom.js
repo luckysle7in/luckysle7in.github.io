@@ -84,6 +84,38 @@ $('#review_textarea').keyup(function(){
 
 
 
+
+$('.bottom-sticky a').on('click', function() {
+	if ($('.intro_step.active').attr('data-step') < 2) {
+	    $('.intro_step.active').removeClass('active').next().addClass('active');
+	}
+	if ($('.content_step.active').attr('data-step') < 5) {
+	    $('.content_step.active').removeClass('active').next().addClass('active');
+	}
+	if ($('.content_step.active').attr('data-step') == 2) {
+	    $('.question_step').eq(0).addClass('active');
+	} else {
+	    $('.question_step.active').next().addClass('active');		
+	}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function hasTouch() {
     return 'ontouchstart' in document.documentElement
            || navigator.maxTouchPoints > 0

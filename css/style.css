@@ -474,7 +474,7 @@ h2 {
     justify-content: space-between;
 }
 .question-stepper-steps > div {
-	width: 19.5%;
+	width: 24.5%;
 	height: 8px;
 	background: #E7D4E1;
 	border-radius: 2px;
@@ -485,8 +485,11 @@ h2 {
 	width: 0;
 	border-radius: 2px;
     transition: all 0.2s;
+    transition-delay: 0.5s;
 }
-.question-stepper-steps > div.step-on > div {
+.question-stepper-steps > div:first-child > div {
+}
+.question-stepper-steps > div.active > div {
 	width: 100%;
 }
 
@@ -705,3 +708,25 @@ h2 {
 	display: flex;
 	justify-content: space-between;
 }
+
+
+
+.intro_step,
+.content_step {
+	_display: none;
+	height: 0;
+	overflow: hidden;
+    transition: all 0.2s;
+}
+.intro_step.active,
+.content_step.active {
+	height: auto;
+	_display: block;
+}
+
+
+
+
+
+
+

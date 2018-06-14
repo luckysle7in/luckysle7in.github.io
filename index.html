@@ -5,7 +5,7 @@
 	<!-- <meta name="viewport" content="width=1036"> -->
 	<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes"> -->
 	<meta name="viewport" content="width=device-width">
-	<title>Review</title>
+	<title>Index</title>
 	<link rel="stylesheet" href="css/jquery.steps.css">
 	<link rel="stylesheet" href="css/swiper.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
@@ -23,19 +23,31 @@
 </header>
 
 <div class="intro">
-	<h1 class="align-center bg">
-		Allen, we are glad <br /> that you like your experience!
-	</h1>
-	<div class="rating-stars">
-		<div class="rating-stars-wrap bg" data-title="Good" data-checked="3">
-			<div class="rating-star star-1 star-on" data-title="Terrible"></div>
-			<div class="rating-star star-2 star-on" data-title="Poor"></div>
-			<div class="rating-star star-3 star-on" data-title="Average"></div>
-			<div class="rating-star star-4 star-on" data-title="Good"></div>
-			<div class="rating-star star-5" data-title="Excellent"></div>
+	<div id="intro_1" class="intro_step active bg" data-step="1">
+		<h1 class="align-center bg">Allen, we are glad <br /> that you like your experience!</h1>
+		<div class="rating-stars">
+			<div class="rating-stars-wrap bg" data-title="Good" data-checked="3">
+				<div class="rating-star star-1 star-on" data-title="Terrible"></div>
+				<div class="rating-star star-2 star-on" data-title="Poor"></div>
+				<div class="rating-star star-3 star-on" data-title="Average"></div>
+				<div class="rating-star star-4 star-on" data-title="Good"></div>
+				<div class="rating-star star-5" data-title="Excellent"></div>
+			</div>
+			<div class="rating-stars-title bg">Good</div>
 		</div>
-		<div class="rating-stars-title bg">
-			Good
+	</div>
+	<div id="intro_2" class="intro_step bg" data-step="2">
+		<div class="icon-image icon-right-top bg"><img src="images/illustration/003.png" /></div>
+		<h1 class="bg">Can you tell us more?</h1>
+		<div class="intro-question-description bg">Your feedback helps other visitors to plan their trips!</div>
+		<div class="question-stepper">
+			<div class="question-stepper-title bg">Step <span>1</span> / 5</div>
+			<div class="question-stepper-steps">
+				<div class="question_step"><div></div></div>
+				<div class="question_step"><div></div></div>
+				<div class="question_step"><div></div></div>
+				<div class="question_step"><div></div></div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -43,101 +55,211 @@
 
 <div class="content">
 	
-	<div class="quick-answer">
-		<h2 class="align-center bg">What you remember most?</h2>
-		<div class="quick-answer-slider">
-			<div class="quick-answer-slider-inner">
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/001.png" />
-						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+	<div id="content_1" class="content_step active bg" data-step="1">
+		<div class="quick-answer">
+			<h2 class="align-center bg">What you remember most?</h2>
+			<div class="quick-answer-slider">
+				<div class="quick-answer-slider-inner">
+					<div class="quick-answer-slider-item bg">
+						<div class="image bg">
+							<div class="check-circle"></div>
+							<img src="images/illustration/001.png" />
+							<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+						</div>
+						<div class="title">Excellent service</div>			
 					</div>
-					<div class="title">
-						Excellent service
-					</div>			
-				</div>
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/002.png" />
-						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+					<div class="quick-answer-slider-item bg">
+						<div class="image bg">
+							<div class="check-circle"></div>
+							<img src="images/illustration/002.png" />
+							<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+						</div>
+						<div class="title">Great audio guide</div>			
 					</div>
-					<div class="title">
-						Great audio guide
-					</div>			
-				</div>
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/003.png" />
-						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+					<div class="quick-answer-slider-item bg">
+						<div class="image bg">
+							<div class="check-circle"></div>
+							<img src="images/illustration/003.png" />
+							<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+						</div>
+						<div class="title">Good navigation</div>			
 					</div>
-					<div class="title">
-						Good navigation
-					</div>			
-				</div>
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/004.png" />
-						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+					<div class="quick-answer-slider-item bg">
+						<div class="image bg">
+							<div class="check-circle"></div>
+							<img src="images/illustration/004.png" />
+							<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+						</div>
+						<div class="title">Excellent service</div>
 					</div>
-					<div class="title">
-						Excellent service
-					</div>			
-				</div>
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/005.png" />
-						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+					<div class="quick-answer-slider-item bg">
+						<div class="image bg">
+							<div class="check-circle"></div>
+							<img src="images/illustration/005.png" />
+							<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+						</div>
+						<div class="title">Excellent service</div>
 					</div>
-					<div class="title">
-						Excellent service
-					</div>			
-				</div>
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/006.png" />
-						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+					<div class="quick-answer-slider-item bg">
+						<div class="image bg">
+							<div class="check-circle"></div>
+							<img src="images/illustration/006.png" />
+							<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+						</div>
+						<div class="title">Great audio guide</div>
 					</div>
-					<div class="title">
-						Great audio guide
-					</div>			
-				</div>
-				<div class="quick-answer-slider-item bg">
-					<div class="image bg">
-						<div class="check-circle"></div>
-						<img src="images/illustration/007.png" />
-						<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+					<div class="quick-answer-slider-item bg">
+						<div class="image bg">
+							<div class="check-circle"></div>
+							<img src="images/illustration/007.png" />
+							<div class="check-wrap"><i class="material-icons md-24">check</i></div>
+						</div>
+						<div class="title">Good navigation</div>
 					</div>
-					<div class="title">
-						Good navigation
-					</div>			
 				</div>
 			</div>
 		</div>
-	</div>
-		
-		
-	<div class="review">
-		<h2 class="align-center bg">Write a puplic review <span class="optional">(optional)</span></h2>
-		<textarea name="text" id="review_textarea"></textarea>
-		<div class="textarea-progress">
-			<div class="textarea-progress-indicator">
-				<i class="material-icons md-24 md-grey">error_outline</i>
-			</div>
-			<div class="textarea-progress-message">
-				Recommended minimum 100 characters
+		<div class="review">
+			<h2 class="align-center bg">Write a puplic review <span class="optional">(optional)</span></h2>
+			<textarea name="text" id="review_textarea"></textarea>
+			<div class="textarea-progress">
+				<div class="textarea-progress-indicator">
+					<i class="material-icons md-24 md-grey">error_outline</i>
+				</div>
+				<div class="textarea-progress-message">
+					Recommended minimum 100 characters
+				</div>
 			</div>
 		</div>
 	</div>
 	
 	
-</div>
-		
+	<div id="content_2" class="content_step bg" data-step="2">
+		<h1 class="align-center bg">
+			How long was the line of people you skipped at the entrance? 
+		</h1>
+		<div class="question-type-options">
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">radio_button_checked</i>	
+				<i class="material-icons md-24 blank">radio_button_unchecked</i>		
+				<div class="title">Less than 10 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">radio_button_checked</i>	
+				<i class="material-icons md-24 blank">radio_button_unchecked</i>		
+				<div class="title">10–30 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">radio_button_checked</i>	
+				<i class="material-icons md-24 blank">radio_button_unchecked</i>		
+				<div class="title">30–60 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">radio_button_checked</i>	
+				<i class="material-icons md-24 blank">radio_button_unchecked</i>		
+				<div class="title">More than 60 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">radio_button_checked</i>	
+				<i class="material-icons md-24 blank">radio_button_unchecked</i>		
+				<div class="title">Don't know</div>	
+			</div>
+		</div>
+	</div>	
+	
+	
+	<div id="content_3" class="content_step bg" data-step="3">
+		<h1 class="align-center bg">
+			How long was the line of people you skipped at the entrance? 
+		</h1>
+		<div class="question-type-options multiple">
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">check_box</i>	
+				<i class="material-icons md-24 blank">check_box_outline_blank</i>		
+				<div class="title">Less than 10 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">check_box</i>	
+				<i class="material-icons md-24 blank">check_box_outline_blank</i>		
+				<div class="title">10–30 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">check_box</i>	
+				<i class="material-icons md-24 blank">check_box_outline_blank</i>		
+				<div class="title">30–60 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">check_box</i>	
+				<i class="material-icons md-24 blank">check_box_outline_blank</i>		
+				<div class="title">More than 60 mins</div>	
+			</div>
+			<div class="question-type-options-item">
+				<i class="material-icons md-24 checked">check_box</i>	
+				<i class="material-icons md-24 blank">check_box_outline_blank</i>		
+				<div class="title">Don't know</div>	
+			</div>
+		</div>	
+	</div>
+
+
+	<div id="content_4" class="content_step bg" data-step="4">
+		<h1 class="align-center bg">
+			What did you think about the Tiqets booking process?
+		</h1>
+		<div class="question-type-icons">
+			<div class="question-type-icons-item red bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<i class="material-icons md-48 md-red">mood_bad</i>		
+				</div>
+				<div class="title">Terrible</div>	
+			</div>
+			<div class="question-type-icons-item grey bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<i class="material-icons md-48 md-grey">sentiment_satisfied</i>		
+				</div>
+				<div class="title">Neutral</div>	
+			</div>
+			<div class="question-type-icons-item green bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<i class="material-icons md-48 md-green">mood</i>			
+				</div>
+				<div class="title">Good</div>	
+			</div>
+		</div>	
+	</div>
+
+
+	<div id="content_5" class="content_step bg" data-step="5">
+		<h1 class="align-center bg">
+			Did the venue accept smartphone tickets?
+		</h1>
+		<div class="question-type-icons">
+			<div class="question-type-icons-item red bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<i class="material-icons md-48 md-red">thumb_down_alt</i>		
+				</div>
+				<div class="title">No</div>	
+			</div>
+			<div class="question-type-icons-item grey bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<i class="material-icons md-48 md-grey">sentiment_satisfied</i>		
+				</div>
+				<div class="title">I don’t know</div>	
+			</div>
+			<div class="question-type-icons-item green bg">
+				<div class="icon-wrap bg">
+					<div class="icon_bg"></div>
+					<i class="material-icons md-48 md-green">thumb_up_alt</i>			
+				</div>
+				<div class="title">Yes</div>	
+			</div>
+		</div>	
+	</div>
 		
 </div>
 
@@ -147,7 +269,7 @@
 
 
 <div class="bottom-sticky">
-	<a href="#" class="button button-green">Post review</a>
+	<a href="#" class="button button-green"><span class="text">Next</span><i class="material-icons md-24">chevron_right</i></a>
 </div>
 
 
