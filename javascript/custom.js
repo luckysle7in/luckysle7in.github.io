@@ -42,11 +42,12 @@ $('.question-type-icons-item').on('click', function() {
 $('.question-type-options-item').on('click', function() {
   if ($(this).parent().hasClass('multiple')) {
     $(this).toggleClass('active');
+    $('.bottom-sticky a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Finish');
   } else {
     $(this).parent().children('.question-type-options-item').removeClass('active');
     $(this).addClass('active');
+    $('.bottom-sticky a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
   }
-  $('.bottom-sticky a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
 })
 
 
