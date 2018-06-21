@@ -729,10 +729,10 @@ h2 {
 	opacity: 1.0;
 	height: auto;
 	display: block;
-	padding: 16px 16px 64px;
+	padding: 16px;
 }
 .content_step.active {
-	padding: 16px 16px 64px;
+	padding: 16px 16px 80px;
 }
 
 .intro_step {
@@ -742,7 +742,7 @@ h2 {
 	padding: 16px;
 }
 
-#content_6 {
+#content_6.active {
 	background-color: #ecf9f9;
 	padding: 16px 16px 32px;;
 }
