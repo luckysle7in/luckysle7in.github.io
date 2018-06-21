@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Amasis";
+	src: url("../fonts/amasismt-medium.ttf"); 
+}
+	
 html {
   min-width: 320px;
   background: #fff;
@@ -67,11 +72,12 @@ input[type=text] {
 	text-align: center;
 }
 h1 {
+	font-family: Amasis;
 	font-size: 24px;
 	line-height: 32px;
 	padding: 8px 0;
 	margin: 0;
-	font-weight: 700;
+	font-weight: 300;
 	margin: 0 0 0px;
 }
 
@@ -722,6 +728,8 @@ h2 {
 	overflow-y: hidden;
 	transition: opacity 0.2s;
 	padding: 0;
+/*	max-width: 616px; */
+	margin: 0 auto;
 }
 .intro_step.active,
 .content_step.active {
