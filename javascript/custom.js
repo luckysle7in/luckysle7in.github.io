@@ -46,6 +46,7 @@ $('.question-type-options-item').on('click', function() {
     $(this).parent().children('.question-type-options-item').removeClass('active');
     $(this).addClass('active');
   }
+  $('.bottom-sticky a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
 })
 
 
@@ -96,7 +97,8 @@ $('.bottom-sticky a').on('click', function() {
     $('.intro_step.active').removeClass('active').next().addClass('active');
     $('.bottom-sticky').hide();
   }
- 
+
+  $('.bottom-sticky a.button').removeClass('button-green').addClass('button-grey').children('.text').text('Skip');
 
 	if ($('.content_step.active').attr('data-step') == 2) {
 	    $('.question_step').eq(0).addClass('active');
@@ -105,7 +107,6 @@ $('.bottom-sticky a').on('click', function() {
 	}
   $('.question-stepper-title').children('span').text($('.content_step.active').attr('data-step') - 1);
   
-  return false;
 })
 
 
