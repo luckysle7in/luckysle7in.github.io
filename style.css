@@ -671,15 +671,14 @@ h2 {
 }
 
 .product_card {
-	width: 300px;
 	background: #FFFFFF;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
 	border-radius: 4px;
-	margin-left: 16px;
+    margin-bottom: 16px;
 	cursor: pointer;
 }
 .product_card:last-child {
-    margin-right: 16px;
+    margin-bottom: 0;
 }
 .product_card img {
 	width: 100%;
@@ -709,13 +708,12 @@ h2 {
 
 .recomendation_slider {
 	padding: 16px 0;
-	margin: 0 -16px;
-	overflow-x: scroll;
+	_overflow-x: scroll;
 }
 .recomendation_slider .recomendation_slider_inner {
-	width: 932px;
-	display: flex;
-	justify-content: space-between;
+	_width: 100%;
+	_display: flex;
+	_justify-content: space-between;
 }
 
 
