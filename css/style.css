@@ -449,7 +449,7 @@ h2 {
 
 .button .material-icons {
 	vertical-align: middle;
-	margin: -6px 0;
+	margin: -6px -6px -6px 0;
 }	
 
 
@@ -624,6 +624,10 @@ h2 {
 	box-sizing: border-box;
     transition: all 0.2s;
 }
+.question-type-options-item:hover {
+	background: #FAFAFA;
+	border: 1px solid #AAAEB5;
+}
 .question-type-options-item.active {
 	background: #47C4C6;
 	border: 1px solid #47C4C6;
@@ -692,6 +696,11 @@ h2 {
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
 	border-radius: 4px;
 	cursor: pointer;
+    transition: all 0.3s;
+}
+.product_card:hover {
+	box-shadow: 0 9px 12px 0 rgba(0,0,0,0.16);
+	margin: -5px 0 5px;
 }
 .product_card img {
 	width: 100%;
@@ -731,11 +740,13 @@ h2 {
 @media only screen and (min-width: 480px) {
 	.recomendation_slider {
 		grid-template-columns: 1fr 1fr;
+		padding: 16px 0 24px;
 	}
 }
 @media only screen and (min-width: 780px) {
 	.recomendation_slider {
 		grid-template-columns: 1fr 1fr 1fr;
+		padding: 16px 0 24px;
 	}
 }
 
