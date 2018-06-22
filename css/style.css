@@ -508,8 +508,9 @@ h2 {
 	background: #953677;
 	width: 0;
 	border-radius: 2px;
-    transition: all 0.2s;
-    transition-delay: 0.5s;
+    transition: all 0.3s;
+    transition-delay: 0.2s;
+	transition-timing-function: ease-out;
 }
 .question-stepper-steps > div:first-child > div {
 }
@@ -761,8 +762,11 @@ h2 {
 	overflow-y: hidden;
 	transition: opacity 0.2s;
 	padding: 0;
-/*	max-width: 616px; */
 	margin: 0 auto;
+}
+#content_6.content_step {
+	transition: opacity 1.0s;
+	transition-delay: 0.3s;
 }
 .intro_step.active,
 .content_step.active {
