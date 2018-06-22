@@ -17,7 +17,7 @@ body {
   color: #323C52;
   margin: 0 auto; }
 
-header {
+  header {
 	width: 100%;
 	height: 48px;
 	background: #47C4C6;
@@ -40,6 +40,11 @@ header {
 .material-icons.md-red 		{ color: rgba(241, 103, 108, 1.0); }
 .material-icons.md-green 	{ color: rgba(71, 196, 198, 1.0); }
 
+
+.content {
+	max-width: 780px;
+	margin: 0 auto;
+}
 
 header .logo {
 	margin: 4px 0 0;
@@ -152,10 +157,6 @@ h2 {
 	color: #47C4C6;
 }
 
-.content {
-	margin: 0;
-	padding: 0;
-}
 
 
 .quick-answer {
@@ -179,7 +180,6 @@ h2 {
 	cursor: pointer;
 }
 .quick-answer-slider-item:last-child {
-	padding-right: 16px;
 }
 .quick-answer-slider-item .image {
 	width: 80px;
@@ -406,6 +406,23 @@ h2 {
 	text-decoration: none;
     transition: all 0.5s;
 
+}
+
+@media only screen and (min-width: 480px) {
+	.bottom-sticky {
+		position: relative;
+		border-top: 0px solid #D2D4D9;
+		text-align: center;
+	}
+	.bottom-block {
+		text-align: center;
+	}
+	.button {
+		display: inline-block;
+		max-width: 200px;
+		margin: 0 auto;
+		padding: 19px 56px 19px 64px;
+	}
 }
 .button.button-green {
 	background: #018794;
@@ -674,11 +691,7 @@ h2 {
 	background: #FFFFFF;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
 	border-radius: 4px;
-    margin-bottom: 16px;
 	cursor: pointer;
-}
-.product_card:last-child {
-    margin-bottom: 0;
 }
 .product_card img {
 	width: 100%;
@@ -695,6 +708,7 @@ h2 {
 	font-size: 13px;
 	color: #606778;
 	line-height: 18px;
+	height: 36px;
 	padding: 0px 16px;
 }
 .product_card .price {
@@ -707,13 +721,24 @@ h2 {
 
 .recomendation_slider {
 	padding: 16px 0;
-	_overflow-x: scroll;
+	display: grid;
+	grid-column-gap: 16px;
+	grid-row-gap: 16px;
+	grid-template-columns: auto;
 }
-.recomendation_slider .recomendation_slider_inner {
-	_width: 100%;
-	_display: flex;
-	_justify-content: space-between;
+
+
+@media only screen and (min-width: 480px) {
+	.recomendation_slider {
+		grid-template-columns: 1fr 1fr;
+	}
 }
+@media only screen and (min-width: 780px) {
+	.recomendation_slider {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
 
 
 
@@ -735,10 +760,24 @@ h2 {
 	display: block;
 	padding: 16px;
 }
+
 .content_step.active {
 	padding: 16px 16px 80px;
 }
 
+#content_2.content_step.active,
+#content_3.content_step.active,
+#content_4.content_step.active,
+#content_5.content_step.active {
+	max-width: 448px;
+	margin: 0 auto;
+}
+
+@media only screen and (min-width: 480px) {
+	.content_step.active {
+		padding: 48px 16px;
+	}
+}
 .intro_step {
 	padding: 0;
 }
