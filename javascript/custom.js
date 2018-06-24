@@ -32,51 +32,62 @@ $('.rating-star').mouseout(function() {
 })	
 
 
-$('.question-type-icons-item').on('click', function() {
-  $(this).parent().children('.question-type-icons-item').removeClass('active');
+
+
+// Icons answers
+
+$('.answer_type_icons .answer').on('click', function() {
+  $(this).parent().children('.answer').removeClass('active');
   $(this).addClass('active');
-  $('.bottom-sticky a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
+  $('.bottom-next a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
 })
 
 
-$('.question-type-options-item').on('click', function() {
+$('.answer_type_options .answer').on('click', function() {
   if ($(this).parent().hasClass('multiple')) {
     $(this).toggleClass('active');
-    $('.bottom-sticky a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Finish');
+    $('.bottom-next a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Finish');
   } else {
-    $(this).parent().children('.question-type-options-item').removeClass('active');
+    $(this).parent().children('.answer').removeClass('active');
     $(this).addClass('active');
-    $('.bottom-sticky a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
+    $('.bottom-next a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
   }
 })
 
 
 
 
-$('#review_textarea').keyup(function(){
+
+// Progerss bar for text answer
+
+$('.answer_text textarea').keyup(function(){
+
   var text = '';
   var icon = '';
   var color = '';
   var progressBar = document.querySelector('.progress-bar');
-
-  
+ 
   if ($(this).val().length == 0) {
     icon = '<i class="material-icons md-24">error_outline</i>';
     text = "Recommended minimum 100 characters";
-    $(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
-    $(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+    $(this).parent().children('.progress_bar').children('.indicator').html(icon);
+    $(this).parent().children('.progress_bar').children('.description').text(text);
   } else if ($(this).val().length < 100) {
     icon = '<div class="progress-bar"><svg viewPort="0 0 100 100"><circle class="progress-bar-element shadow"></circle><circle class="progress-bar-element progress"></circle></svg></div>';
     text = $(this).val().length + ' / 100 minimun';
-    $(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
-    $(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+    $(this).parent().children('.progress_bar').children('.indicator').html(icon);
+    $(this).parent().children('.progress_bar').children('.description').text(text);
     progressBar = document.querySelector('.progress-bar');
     progressBar.style.setProperty('--percent', $(this).val().length);
   } else {
     icon = '<i class="material-icons md-24">check_circle</i>';
     text = "Good review! Enough...";
-    $(this).parent().children('.textarea-progress').children('.textarea-progress-indicator').html(icon);
-    $(this).parent().children('.textarea-progress').children('.textarea-progress-message').text(text);
+    $(this).parent().children('.progress_bar').children('.indicator').html(icon);
+    $(this).parent().children('.progress_bar').children('.description').text(text);
+  }
+    
+  if ($(this).parent().parent().hasClass('content_step') & $(this).val().length > 99) {
+    $('.bottom-next a.button').removeClass('button-grey').addClass('button-green').children('.text').text('Next');
   }
   
 })
@@ -86,28 +97,35 @@ $('#review_textarea').keyup(function(){
 
 
 
+// Transition to next step
 
-$('.bottom-sticky a').on('click', function() {
-	if ($('.intro_step.active').attr('data-step') < 2) {
-	    $('.intro_step.active').removeClass('active').next().addClass('active');
-	}
-	if ($('.content_step.active').attr('data-step') < 6) {
-	    $('.content_step.active').removeClass('active').next().addClass('active');
-  }
-  if ($('.content_step.active').attr('data-step') == 6) {
-    $('.intro_step.active').removeClass('active').next().addClass('active');
-    $('.bottom-sticky').hide();
-  }
-
-  $('.bottom-sticky a.button').removeClass('button-green').addClass('button-grey').children('.text').text('Skip');
-
-	if ($('.content_step.active').attr('data-step') == 2) {
-	    $('.question_step').eq(0).addClass('active');
+$('.bottom-next a').on('click', function() {
+	
+  	// Progress bar update
+  	if ($('.header_step.active').attr('data-step') == 'start') {
+  		$('.progress_bar .step').eq(0).addClass('active');
 	} else {
-	    $('.question_step.active').next().addClass('active');		
+		$('.progress_bar .step.active').next().addClass('active');		
 	}
-  $('.question-stepper-title').children('span').text($('.content_step.active').attr('data-step') - 1);
-  
+	$('.progress_bar .title').children('span').text($('.content_step.active').next().attr('data-step'));
+	
+	// Next header step
+	if ($('.header_step.active').attr('data-step') == 'start') {
+	    $('.header_step.active').removeClass('active').next().addClass('active');
+	}
+	
+	// Next content step
+	$('.content_step.active').removeClass('active').next().addClass('active');
+
+	// Hide button at the kast step
+	if ($('.content_step.active').attr('data-step') == 'finish') {
+		$('.header_step.active').removeClass('active').next().addClass('active');
+		$('.bottom-next').hide();
+	}
+
+  	// Set next button to SKIP
+  	$('.bottom-next a.button').removeClass('button-green').addClass('button-grey').children('.text').text('Skip');
+
 })
 
 
